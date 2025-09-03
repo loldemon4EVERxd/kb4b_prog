@@ -59,7 +59,7 @@ Tímto nastavení můžeš stahovat změny z učitelského repozitáře do svéh
 ```bash
   git push origin main
 ```
-3. Stav repozitáře lze zkontroloat pomocí:
+3. Stav repozitáře lze zkontrolovat pomocí:
 ```bash
   git status
 ```
