@@ -26,7 +26,7 @@ Otevři terminál ve VS Code (**Ctrl+`**) a zadej:
 git config --global user.name "Tvé jméno"
 git config --global user.email "tvuj@email.cz"
 ```
-    Jméno odpovídá názvu tvého účtu.
+Jméno odpovídá názvu tvého účtu.
 
 ## 4. Pullnutí z gitu
 Pomocí pullnutí stáhneš změny v repozitáři z gitu do počítače.
