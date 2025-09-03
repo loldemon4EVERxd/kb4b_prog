@@ -21,7 +21,7 @@ Tento repozitář je nastavený jako *read-only*. Pro možnost úprav si budete 
 6. Otevři naklonovaný repozitář ve VS Code.
 
 ## 3. Nastavení jména a e-mailu v Gitu (první použití)
-Otevři terminál ve VS Code (**Ctrl+`**) a zadej:
+Otevři terminál ve VS Code (**Ctrl+;**) a zadej:
 ```bash
 git config --global user.name "Tvé jméno"
 git config --global user.email "tvuj@email.cz"
@@ -31,7 +31,7 @@ Jméno odpovídá názvu tvého účtu.
 ## 4. Pullnutí z gitu
 Pomocí pullnutí stáhneš změny v repozitáři z gitu do počítače.
 1. Otevři repozitář ve VS Code.
-2. Otevři terminál (Ctrl+`).
+2. Otevři terminál (Ctrl+;).
 3. Stáhni nové změny:
 ```bash
 git pull origin main
