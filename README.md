@@ -1,4 +1,4 @@
-# prace_v_hodinach
+# README
 Tento README slouží jako ukázka (a návod) k využití gitu.
 
 ## 0. Před začátkem – založení účtu
@@ -10,7 +10,7 @@ Tento README slouží jako ukázka (a návod) k využití gitu.
 Tento repozitář je nastavený jako *read-only*. Pro možnost úprav si budete muset vytvořit vlastní verzi repozitáře - tzv. *fork*.
 1. Na stránce tohoto repozitáře klikni vpravo nahoře na tlačítko **Fork**.
 2. Vytvoří se **kopie repozitáře** pod tvým účtem:
-   https://github.com/*tvoje-jmeno*/prace_v_hodinach
+   https://github.com/*tvoje-jmeno*/kb4b_prog
 
 ## 2. Klonování forku do VS Code (první použití)
 1. Otevři **VS Code**.
@@ -41,7 +41,7 @@ git pull origin main
 Tímto nastavení můžeš stahovat změny z učitelského repozitáře do svého repozitáře
 1. Zadej příkaz:
 ```bash
-  git remote add upstream https://github.com/kb4b-2025/prace_v_hodinach
+  git remote add upstream https://github.com/chlubna25/kb4b_prog
 ```
 2. Změny z učitelského repa lze stáhnout pomocí:
 ```bash
