@@ -14,11 +14,12 @@ Tento repozitář je nastavený jako *read-only*. Pro možnost úprav si budete 
 
 ## 2. Klonování forku do VS Code (první použití)
 1. Otevři **VS Code**.
-2. Otevři paletu příkazů (**Ctrl+Shift+P**).
-3. Zadej **Git: Clone**.
-4. Vlož **URL svého forku** (ne originálu).
-5. Vyber složku na disku.
-6. Otevři naklonovaný repozitář ve VS Code.
+2. Přihlas se svým účtem GitHubu.
+3. Otevři paletu příkazů (**Ctrl+Shift+P**).
+4. Zadej **Git: Clone**.
+5. Vlož **URL svého forku** (ne originálu).
+6. Vyber složku na disku.
+7. Otevři naklonovaný repozitář ve VS Code.
 
 ## 3. Nastavení jména a e-mailu v Gitu (první použití)
 Otevři terminál ve VS Code (**Ctrl+;**) a zadej:
