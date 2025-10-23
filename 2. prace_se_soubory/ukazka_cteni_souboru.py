@@ -1,10 +1,10 @@
-cesta = "data/slova.txt"
+cesta = "2. prace_se_soubory\data\slova.txt"
 
 # with open() as file
 # Otevření souboru v režimu pro čtení "r" s UTF-8 kódováním
 with open(cesta, "r", encoding="utf-8") as file:
-    for line in file:
-        slovo = line.strip()    # funcke slip slouží k odstranění bílých znaků na začátku/konci
+    for line in file.readlines():
+        slovo = line.strip()    # funcke strip slouží k odstranění bílých znaků na začátku/konci
         print(slovo)
 
 print("\n\n")
