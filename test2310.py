@@ -9,7 +9,11 @@ def hod_dvema_kostkami():
         a = random.randint(1, 6)
         b = random.randint(1, 6)
         print(a, b)
+<<<<<<< HEAD
         if a == b:
+=======
+        if a == b and a == 2:
+>>>>>>> 3b45206 (0611)
             break
     print(f"pocet hodu bylo {pokusy}")
 
