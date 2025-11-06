@@ -1,6 +1,10 @@
 otazka;A;B;C;spravna
 Kolik je 7*6?;42;36;56;A
+<<<<<<< HEAD
 Kolik je 11*12?;114;126;124;C
+=======
+Kolik je 11*12?;114;126;132;C
+>>>>>>> a32d6b3 (0611 done)
 Které město je hlavní město ČR?;Brno;Praha;Ostrava;B
 Který datový typ v Pythonu je neměnný?;list;set;tuple;C
 Jaká funkce vypíše délku seznamu?;size();len();count();B
