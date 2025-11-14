@@ -72,6 +72,6 @@ def quiz():
 #     generuj_priklad()
 # print(f"Spravne jsi mel {SPRAVNE}/3 prikladu")
 
-nacti_priklady()
+# nacti_priklady()
 
-# quiz()
+quiz()
