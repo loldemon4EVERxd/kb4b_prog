@@ -9,7 +9,7 @@ def hod_dvema_kostkami():
         a = random.randint(1, 6)
         b = random.randint(1, 6)
         print(a, b)
-        if a == b and a == 2:
+        if a == b:
             break
     print(f"pocet hodu bylo {pokusy}")
 
@@ -46,7 +46,7 @@ def generuj_priklad():
         return False # nektere priklady jsou spatne
 
 hod_dvema_kostkami()
-print()
-vypis_statistiky()
-print()
-generuj_priklad()
+# print()
+# vypis_statistiky()
+# print()
+# generuj_priklad()
