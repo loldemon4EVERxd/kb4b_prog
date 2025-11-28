@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 
 
 # otevřeme CSV soubor v režimu čtení
-with open("2. prace_se_soubory/data/teploty.csv", newline="", encoding="utf-8") as file:
+with open("2. prace_se_soubory/data/teploty.csv", "r", encoding="utf-8") as file:
     reader = csv.DictReader(file)  # DictReader načítá CSV jako slovníky podle názvů sloupců
 
     vsechny_teploty = []
