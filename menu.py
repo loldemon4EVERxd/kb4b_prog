@@ -11,7 +11,6 @@ def display(name):
     for i in range(1, len(name)+1):
         print(f"{i}. {name[i-1]}")
 
-<<<<<<< HEAD
 def auth():
     while True:
         clear_console()
@@ -62,7 +61,6 @@ def auth():
 
                 elif options[choice - 1] == "exit":
                     exit()
-=======
 def exit():
     print(".", end="")
     time.sleep(0.5)
@@ -71,7 +69,8 @@ def exit():
     print(".", end="")
     time.sleep(0.5)
     quit()
->>>>>>> ed54bf4 (0412)
+=======
+>>>>>>> 35c370e (1212)
 
 def main_menu():
         while True:
@@ -92,7 +91,6 @@ def main_menu():
                         pass
                     elif options[choice - 1] == "exit":
                         exit()
-<<<<<<< HEAD
             clear_console()
 
 def exit():
@@ -102,7 +100,5 @@ def exit():
     sleep(0.5)
     print(".", end="")
     sleep(0.5)
+    clear_console()
     quit()
-=======
-            clear_console()
->>>>>>> ed54bf4 (0412)
