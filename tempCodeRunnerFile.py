@@ -1,2 +1,2 @@
 
-                                print(r["q"])
+                                        plt.tight_layout()
