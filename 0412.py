@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 from time import gmtime, strftime, sleep
 import csv
 import random
+import sys
 
 def clear_console():
     if os.name == 'nt':
@@ -82,9 +83,13 @@ def main_menu():
         gamestart = True
         yech = ["yes", "YES", "y", "Y", "1", "true", "True", "TRUE"]
         noch = ["no", "NO", "n", "N", "0", "false", "False", "FALSE"]
+        easyc = 0
+        medc = 0
+        hardc = 0
         while True:
             clear_console()
             options = ["stats", "winners", "wanna be a millionaire?", "exit"]
+            statoptions = ["difficulty ratio", "category ratio"]
             display(options)
             print()
             choice = input(">: ")
@@ -92,25 +97,52 @@ def main_menu():
                 choice = int(choice)
                 if 1 <= choice <= len(options):
                     if options[choice - 1] == "stats":
-                        easyc = 0
-                        medc = 0
-                        hardc = 0
-                        with open("2. prace_se_soubory/PROJEKT_milionar/quiz_questions.csv", "r", encoding="utf-8") as q:
-                            reader = csv.reader(q, delimiter=';')
-                            for line in reader:
-                                if line[1] == "easy":
-                                    easyc += 1
-                                elif line[1] == "medium":
-                                    medc += 1
-                                elif line[1] == "hard":
-                                    hardc += 1
-                        plt.bar(["easy", "medium", "hard"], [easyc, medc, hardc])
-                        plt.title("category ratio in dataset *questions*")
-                        plt.ylabel("question count")
-                        plt.xticks(rotation=45, ha="right")
-                        plt.tight_layout()
-                        plt.show()
-
+                        clear_console()
+                        display(statoptions)
+                        statchoice = input(">: ")
+                        if statchoice.isdigit():
+                            statchoice = int(statchoice)
+                            if 1 <= statchoice <= len(statoptions):
+                                if statoptions[statchoice - 1] == "difficulty ratio":
+                                    with open("2. prace_se_soubory/PROJEKT_milionar/quiz_questions.csv", "r", encoding="utf-8") as q:
+                                        difficulties = []
+                                        reader = csv.reader(q, delimiter=',')
+                                        next(reader)
+                                        for line in reader:
+                                            if line[1] not in difficulties:
+                                                difficulties.append(line[1])
+                                            if line[1] == "easy":
+                                                easyc += 1
+                                            elif line[1] == "medium":
+                                                medc += 1
+                                            elif line[1] == "hard":
+                                                hardc += 1
+                                        plt.bar(difficulties, [easyc, medc, hardc])
+                                        plt.title("difficulty ration ratio in dataset *questions*")
+                                        plt.ylabel("question count")
+                                        plt.xticks(rotation=45, ha="right")
+                                        plt.tight_layout()
+                                        clear_console()
+                                        print(f"number of easy questions: {easyc}")
+                                        print(f"number of medium questions: {medc}")
+                                        print(f"number of hard questions: {hardc}")
+                                        plt.show()
+                                        input(">: ")
+                                if statoptions[statchoice - 1] == "category ratio":
+                                    categories = {}
+                                    with open("2. prace_se_soubory/PROJEKT_milionar/quiz_questions.csv", "r", encoding="utf-8") as q:
+                                        reader = csv.reader(q, delimiter=',')
+                                        next(reader)
+                                        for line in reader:
+                                            category = line[2]
+                                            categories[category] = categories.get(category, 0) + 1
+                                        plt.bar(categories.keys(), categories.values())
+                                        plt.title("category ratio in dataset *questions*")
+                                        plt.ylabel("question count")
+                                        plt.xticks(rotation=45, ha="right")
+                                        plt.tight_layout()
+                                        plt.show()
+                                        input(">: ")
                     elif options[choice - 1] == "winners":
                         with open("0412w/winners.csv", "r", encoding="utf-8") as w:
                             reader = csv.reader(w, delimiter=';')
@@ -120,8 +152,6 @@ def main_menu():
                                 print(f'{line[1]} at {line[0]} left a message: "{line[2]}"')
                             input(">: ")
                                 
-
-
                     elif options[choice - 1] == "wanna be a millionaire?":
                         easy = []
                         med = []
@@ -172,11 +202,12 @@ def main_menu():
                                                 else:
                                                     continue
                                                 gamestart = False
-                            for i in range(4):
+                            for i in range(5):
                                 clear_console()
                                 r = random.choice(easy)
                                 print(f"round {i+1} - ez:")
                                 print(r["q"])
+                                print(r["ansr"])
                                 lckin = input(">: ")
                                 if r["ansr"] == "True":
                                     if lckin in yech:
@@ -192,11 +223,12 @@ def main_menu():
                                     else:
                                         print("eternal damnation, what a shame")
                                         exitx()
-                            for i in range(4):
+                            for i in range(5):
                                 clear_console()
                                 r = random.choice(med)
-                                print(f"round {i+5} - mid:")
+                                print(f"round {i+6} - mid:")
                                 print(r["q"])
+                                print(r["ansr"])
                                 lckin = input(">: ")
                                 if r["ansr"] == "True":
                                     if lckin in yech:
@@ -212,11 +244,12 @@ def main_menu():
                                     else:
                                         print("eternal damnation, what a shame")
                                         exitx()
-                            for i in range(4):
+                            for i in range(5):
                                 clear_console()
                                 r = random.choice(hard)
-                                print(f"round {i+9} - hard:")
+                                print(f"round {i+11} - hard:")
                                 print(r["q"])
+                                print(r["ansr"])
                                 lckin = input(">: ")
                                 if r["ansr"] == "True":
                                     if lckin in yech:
