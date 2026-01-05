@@ -3,7 +3,6 @@ import matplotlib.pyplot as plt
 from time import gmtime, strftime, sleep
 import csv
 import random
-import sys
 
 def clear_console():
     if os.name == 'nt':
@@ -118,7 +117,7 @@ def main_menu():
                                             elif line[1] == "hard":
                                                 hardc += 1
                                         plt.bar(difficulties, [easyc, medc, hardc])
-                                        plt.title("difficulty ration ratio in dataset *questions*")
+                                        plt.title("difficulty ratio in dataset *questions*")
                                         plt.ylabel("question count")
                                         plt.xticks(rotation=45, ha="right")
                                         plt.tight_layout()
@@ -182,7 +181,7 @@ def main_menu():
                                         answr = input(">: ")
                                         if answr in noch:
                                             sleep(1.0)
-                                            print("ok, fk u then")
+                                            print("ok, nvm then")
                                             exitx()
                                         elif answr in yech:
                                             while gamestart == True:
@@ -207,7 +206,6 @@ def main_menu():
                                 r = random.choice(easy)
                                 print(f"round {i+1} - ez:")
                                 print(r["q"])
-                                print(r["ansr"])
                                 lckin = input(">: ")
                                 if r["ansr"] == "True":
                                     if lckin in yech:
@@ -228,7 +226,6 @@ def main_menu():
                                 r = random.choice(med)
                                 print(f"round {i+6} - mid:")
                                 print(r["q"])
-                                print(r["ansr"])
                                 lckin = input(">: ")
                                 if r["ansr"] == "True":
                                     if lckin in yech:
@@ -249,7 +246,6 @@ def main_menu():
                                 r = random.choice(hard)
                                 print(f"round {i+11} - hard:")
                                 print(r["q"])
-                                print(r["ansr"])
                                 lckin = input(">: ")
                                 if r["ansr"] == "True":
                                     if lckin in yech:
