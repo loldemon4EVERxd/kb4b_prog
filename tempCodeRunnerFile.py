@@ -1,2 +1,1 @@
-
-                                        plt.tight_layout()
+"]
