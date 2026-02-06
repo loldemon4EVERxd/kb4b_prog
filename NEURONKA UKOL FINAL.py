@@ -1,6 +1,8 @@
 import csv
 from sklearn.neural_network import MLPClassifier
 from sklearn.metrics import confusion_matrix
+import matplotlib.pyplot as plt
+from sklearn.metrics import ConfusionMatrixDisplay
 
 # ---------- Načtení CSV a úprava dat ----------
 X = []  # = vstupy
@@ -113,13 +115,13 @@ test_Y = Y[split:]
 # ---------- Neuronová síť ----------
 neural_network = MLPClassifier(
     hidden_layer_sizes=(32, 16, 8, 4),
-    activation="relu",
+    activation="logistic",
     max_iter=400,
-    # verbose=True
+    verbose=True
 )
 
 
-test_number = 20
+test_number = 1
 for i in range(test_number):
     neural_network.fit(trening_X, trening_Y)
 
@@ -133,4 +135,6 @@ for i in range(test_number):
     print(correct / len(results))
 
     print(confusion_matrix(test_Y, results))
+    ConfusionMatrixDisplay.from_predictions(test_Y, results)
+    plt.show()
 
