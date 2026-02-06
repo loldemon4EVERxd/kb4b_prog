@@ -115,6 +115,7 @@ test_Y = Y[split:]
 # ---------- Neuronová síť ----------
 neural_network = MLPClassifier(
     hidden_layer_sizes=(32, 16, 8, 4),
+<<<<<<< HEAD
     activation="logistic",
     max_iter=400,
     verbose=True
@@ -122,6 +123,15 @@ neural_network = MLPClassifier(
 
 
 test_number = 1
+=======
+    activation="relu",
+    max_iter=400,
+    # verbose=True
+)
+
+
+test_number = 20
+>>>>>>> 8dd6b29 (neuronka ukol final final)
 for i in range(test_number):
     neural_network.fit(trening_X, trening_Y)
 
@@ -135,6 +145,9 @@ for i in range(test_number):
     print(correct / len(results))
 
     print(confusion_matrix(test_Y, results))
+<<<<<<< HEAD
     ConfusionMatrixDisplay.from_predictions(test_Y, results)
     plt.show()
+=======
+>>>>>>> 8dd6b29 (neuronka ukol final final)
 
