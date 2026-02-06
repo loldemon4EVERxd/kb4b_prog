@@ -75,7 +75,17 @@ with open("data/games.csv", "r", encoding="utf-8") as file:
         t2_ban4 = int(row["t2_ban4"])
         t2_ban5 = int(row["t2_ban5"])  
 
-        X.append([firstBlood])
+        X.append ([gamedur, firstBlood, firstTower, firstInhibitor, firstBaron, firstDragon, firstRiftHerald,
+                  t1_champ1id, t1_champ1_sum1, t1_champ1_sum2, t1_champ2id, t1_champ2_sum1, t1_champ2_sum2,
+                  t1_champ3id, t1_champ3_sum1, t1_champ3_sum2, t1_champ4id, t1_champ4_sum1, t1_champ4_sum2,
+                  t1_champ5id, t1_champ5_sum1, t1_champ5_sum2,
+                  t1_towerKills, t1_inhibitorKills, t1_baronKills, t1_dragonKills, t1_riftHeraldKills,
+                  t1_ban1, t1_ban2, t1_ban3, t1_ban4, t1_ban5,
+                  t2_champ1id, t2_champ1_sum1, t2_champ1_sum2, t2_champ2id, t2_champ2_sum1, t2_champ2_sum2,
+                  t2_champ3id, t2_champ3_sum1, t2_champ3_sum2, t2_champ4id, t2_champ4_sum1, t2_champ4_sum2,
+                  t2_champ5id, t2_champ5_sum1, t2_champ5_sum2,
+                  t2_towerKills, t2_inhibitorKills, t2_baronKills, t2_dragonKills, t2_riftHeraldKills,
+                  t2_ban1, t2_ban2, t2_ban3, t2_ban4, t2_ban5])
         # X.append ([gamedur, firstBlood, firstTower, firstInhibitor, firstBaron, firstDragon, firstRiftHerald,
         #           t1_champ1id, t1_champ1_sum1, t1_champ1_sum2, t1_champ2id, t1_champ2_sum1, t1_champ2_sum2,
         #           t1_champ3id, t1_champ3_sum1, t1_champ3_sum2, t1_champ4id, t1_champ4_sum1, t1_champ4_sum2,
@@ -102,7 +112,7 @@ test_Y = Y[split:]
 
 # ---------- Neuronová síť ----------
 neural_network = MLPClassifier(
-    hidden_layer_sizes=(100, 20, 10, 10),
+    hidden_layer_sizes=(32, 16, 8, 4),
     activation="relu",
     max_iter=400,
     # verbose=True
